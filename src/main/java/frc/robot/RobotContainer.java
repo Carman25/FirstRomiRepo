@@ -176,6 +176,6 @@ public class RobotContainer {
    */
   public Command getArcadeDriveCommand() {
     return new ArcadeDrive(
-        m_drivetrain, () -> -m_controller.getRawAxis(1), () -> m_controller.getRawAxis(2));
+        m_drivetrain, () -> 0.8 * -m_controller.getRawAxis(1), () -> 0.2 * m_controller.getRawAxis(2));
   }
 }
