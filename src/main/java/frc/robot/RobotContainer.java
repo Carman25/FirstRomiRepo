@@ -99,7 +99,7 @@ public class RobotContainer {
             .setKinematics(DriveConstants.kDriveKinematics)
             .addConstraint(autoVoltageConstraint);
 
-      String trajectoryJSON = "RomiFieldTest.wpilib.json";
+      String trajectoryJSON = "FieldTest#2.wpilib.json";
 
       try {
         Path trajectoryPath = Filesystem.getDeployDirectory().toPath().resolve(trajectoryJSON);
@@ -112,8 +112,8 @@ public class RobotContainer {
             new SimpleMotorFeedforward(DriveConstants.ksVolts, DriveConstants.kvVoltSecondsPerMeter, DriveConstants.kaVoltSecondsSquaredPerMeter),
             DriveConstants.kDriveKinematics,
             m_drivetrain::getWheelSpeeds,
-            new PIDController(DriveConstants.kPDriveVel, 0, 0),
-            new PIDController(DriveConstants.kPDriveVel, 0, 0),
+            new PIDController(DriveConstants.kPDriveVelLeft, 0, 0),
+            new PIDController(DriveConstants.kPDriveVelRight, 0, 0),
             m_drivetrain::tankDriveVolts,
             m_drivetrain);
     
